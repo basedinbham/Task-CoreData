@@ -32,7 +32,7 @@ class TaskTableViewCell: UITableViewCell {
         
         let image = task.isComplete ? ( UIImage(named: "complete") ?? UIImage() ) : ( UIImage(named: "incomplete") ?? UIImage() )
         
-        completionButton.setBackgroundImage(image, for: .normal)
+        completionButton.setImage(image, for: .normal)
     }
     
     //MARK: - LIFECYCLES
