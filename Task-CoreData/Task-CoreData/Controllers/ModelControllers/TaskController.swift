@@ -52,4 +52,13 @@ class TaskController {
         CoreDataStack.saveContext()
     }
     
+    func deleteTask(task: Task) {
+        guard let index = tasks.firstIndex(of: task) else { return }
+        tasks.remove(at: index)
+        
+        //Removes from persistence
+        CoreDataStack.context.delete(task)
+        CoreDataStack.saveContext()
+    }
+    
 } // End of Class

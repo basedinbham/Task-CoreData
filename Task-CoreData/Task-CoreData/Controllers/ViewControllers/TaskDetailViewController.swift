@@ -17,7 +17,7 @@ class TaskDetailViewController: UIViewController {
     
     //MARK: - PROPERTIES
     var task: Task?
-    var date: Date?
+    //var date: Date?
     
     //MARK: - LIFECYCLES
     override func viewDidLoad() {
@@ -33,8 +33,6 @@ class TaskDetailViewController: UIViewController {
         // Optional, so needs default
         taskDueDatePicker.date = task.dueDate ?? Date()
     }
-    
-
     
     //MARK: - ACTIONS
     @IBAction func saveButtonTapped(_ sender: Any) {
@@ -53,13 +51,6 @@ class TaskDetailViewController: UIViewController {
     
     @IBAction func dueDatePickerDateChanged(_ sender: Any) {
         guard let picker = sender as? UIDatePicker else { return }
+        taskDueDatePicker.date = picker.date
     }
-    
-    
-    
-    //MARK: - HELPER FUNCTIONS
-
-
-
-
-}
+} // End of Class
